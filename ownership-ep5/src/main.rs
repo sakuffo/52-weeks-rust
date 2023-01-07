@@ -1,6 +1,14 @@
+#[derive(Debug)]
 struct Rectangle {
     width: u32,
     height: u32,
+}
+
+impl Rectangle {
+    fn area(&self) -> u32 {
+        println!("Calculating area of rectangle...{}", self.width)
+        self.width * self.height
+    }
 }
 
 fn main() {
@@ -11,10 +19,8 @@ fn main() {
 
     println!(
         "The area of the rectangle is {} square pixels.",
-        area(&rect1)
+        rect1.area()
     );
-}
 
-fn area(rect1v: &Rectangle) -> u32 {
-    rect1v.width * rect1v.height
+    println!("\n\nrect1 is {:#?}", rect1);
 }
